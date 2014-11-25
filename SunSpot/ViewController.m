@@ -8,13 +8,13 @@
 
 #import "ViewController.h"
 
-#import <MediaPlayer/MediaPlayer.h>
+#import <AVKit/AVKit.h>
 
 #import <AVFoundation/AVFoundation.h>
 
 @interface ViewController ()
 
-@property (nonatomic, retain) MPMoviePlayerController *moviePlayer;
+@property (nonatomic, retain) AVPlayerViewController *avPlayerViewcontroller;
 
 @end
 
@@ -32,26 +32,44 @@
     
     NSURL *fileURL = [NSURL fileURLWithPath:movieFilePath];
     
-    MPMoviePlayerController *player = [[MPMoviePlayerController alloc] initWithContentURL:fileURL];
+    AVPlayerViewController *playerViewController = [[AVPlayerViewController alloc] init];
     
-    self.moviePlayer = player;
+    playerViewController.player = [AVPlayer playerWithURL:fileURL];
     
-    [view addSubview:player.view];
+    self.avPlayerViewcontroller = playerViewController;
+    
+    [self resizePlayerToViewSize];
+    
+    [view addSubview:playerViewController.view];
  
     view.autoresizesSubviews = TRUE;
     
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(mediaIsPreparedToPlayDidChange:)
-                                                 name:MPMediaPlaybackIsPreparedToPlayDidChangeNotification
-                                               object:player];
-    
-    [player prepareToPlay];
+//    [[NSNotificationCenter defaultCenter] addObserver:self
+//                                             selector:@selector(mediaIsPreparedToPlayDidChange:)
+//                                                 name:MPMediaPlaybackIsPreparedToPlayDidChangeNotification
+//                                               object:player];
+//    
+//    [player prepareToPlay];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+- (void) resizePlayerToViewSize
+{
+    CGRect frame = self.view.frame;
+    
+    NSLog(@"frame size %d, %d", (int)frame.size.width, (int)frame.size.height);
+    
+    self.avPlayerViewcontroller.view.frame = frame;
+    
+//    self.moviePlayer.view.center = self.moviePlayer.view.center;
+}
+
+/*
 
 - (void) mediaIsPreparedToPlayDidChange:(NSNotification*)notification
 {
@@ -77,4 +95,6 @@
     self.moviePlayer.view.center = self.moviePlayer.view.center;
 }
 
+*/
+ 
 @end
