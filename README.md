@@ -13,7 +13,16 @@ http://www.helioviewer.org/
 http://www.thesuntoday.org/
 
 The h.264 video was encoded with x264 from the original 4K video frames.
+The original video data is something like 4 gigs uncompressed and 70 megs
+after x264 compression with default quality settings.
+
+The video was encoded at 1080x1080 (square pixels) and can be viewed in
+either portrait or landscape on an iPad device.
 
 This example will run on newer 64bit iPad devices and it may still run
 on devices as old as an iPad2.
+
+The video will playback at high resolution with only about 1% CPU usage
+on an iPad. While the video is very high resolution, it plays back at only
+2 FPS so that detail of each frame can be seen.
 
