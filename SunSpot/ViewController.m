@@ -8,9 +8,8 @@
 
 #import "ViewController.h"
 
-#import <AVKit/AVKit.h>
-
 #import <AVFoundation/AVFoundation.h>
+#import <AVKit/AVKit.h>
 
 @interface ViewController ()
 
@@ -43,13 +42,6 @@
     [view addSubview:playerViewController.view];
  
     view.autoresizesSubviews = TRUE;
-    
-//    [[NSNotificationCenter defaultCenter] addObserver:self
-//                                             selector:@selector(mediaIsPreparedToPlayDidChange:)
-//                                                 name:MPMediaPlaybackIsPreparedToPlayDidChangeNotification
-//                                               object:player];
-//    
-//    [player prepareToPlay];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -65,36 +57,6 @@
     NSLog(@"frame size %d, %d", (int)frame.size.width, (int)frame.size.height);
     
     self.avPlayerViewcontroller.view.frame = frame;
-    
-//    self.moviePlayer.view.center = self.moviePlayer.view.center;
 }
 
-/*
-
-- (void) mediaIsPreparedToPlayDidChange:(NSNotification*)notification
-{
-    CGRect frame = self.view.frame;
-    
-    NSLog(@"frame size %d, %d", (int)frame.size.width, (int)frame.size.height);
-    
-    self.moviePlayer.view.frame = frame;
-    
-    self.moviePlayer.view.center = self.moviePlayer.view.center;
-    
-    [self.moviePlayer play];
-}
-
-- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
-{
-    CGRect frame = self.view.frame;
-    
-    NSLog(@"frame rotation size %d, %d", (int)frame.size.width, (int)frame.size.height);
-    
-    self.moviePlayer.view.frame = frame;
-    
-    self.moviePlayer.view.center = self.moviePlayer.view.center;
-}
-
-*/
- 
 @end
