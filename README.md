@@ -26,3 +26,6 @@ The video will playback at high resolution with only about 1% CPU usage
 on an iPad. While the video is very high resolution, it plays back at only
 2 FPS so that detail of each frame can be seen.
 
+On a 64bit iPad, the native screen resolution is 2048x1536 so the 1080x1080
+video is scaled up to 1536x1536 (about 30%) at runtime.
+
