@@ -1,5 +1,7 @@
 SunSpot is an iOS 8 app that demonstrates playback with AVKit with a 1080p video.
 
+Courtesy of NASA/SDO and the AIA, EVE, and HMI science teams.
+
 Inspired by:
 
 https://www.youtube.com/watch?v=ipvfwPqh3V4
@@ -7,6 +9,8 @@ https://www.youtube.com/watch?v=ipvfwPqh3V4
 Original 4K images downloaded from:
 
 http://sdo.gsfc.nasa.gov/
+
+http://sdo.gsfc.nasa.gov/data/rules.php
 
 http://www.helioviewer.org/
 
